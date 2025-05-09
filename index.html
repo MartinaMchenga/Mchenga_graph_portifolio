@@ -11,94 +11,69 @@
       --light:#f5f7fa;
       --accent:#f2a71b;
       --radius:14px;
-      --maxw:980px;
+      --maxw:960px;
     }
     *{box-sizing:border-box;}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
-      line-height:1.6;
-      background:var(--light);
-      color:#111;
-    }
-    header{
-      background:var(--dark);
-      color:#fff;
-      text-align:center;
-      padding:3rem 1rem 2.5rem;
-    }
-    .avatar{
-      width:140px;height:140px;object-fit:cover;border-radius:50%;border:4px solid rgba(255,255,255,.8);margin-bottom:1rem;
-    }
-    header h1{margin:0 0 .5rem;font-size:2.5rem;letter-spacing:.5px;}
-    header p{margin:0;font-size:1.2rem;font-weight:300;}
-    .social{
-      margin-top:1rem;
-    }
-    .social a{
-      display:inline-block;
-      padding:.4rem .8rem;
-      background:var(--accent);
-      color:#111;
-      border-radius:8px;
-      font-weight:600;
-      text-decoration:none;
-      transition:opacity .2s;
-    }
-    .social a:hover{opacity:.8;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;background:var(--light);color:#111;}
 
-    nav{
-      background:#fff;
-      position:sticky;top:0;z-index:50;
-      box-shadow:0 1px 6px rgba(0,0,0,.08);
-    }
-    nav ul{display:flex;justify-content:center;gap:.25rem;list-style:none;margin:0;padding:.5rem 0;}
-    nav a{display:block;padding:.55rem 1rem;border-radius:8px;text-decoration:none;color:var(--dark);font-weight:600;font-size:.95rem;transition:background .2s;}
-    nav a:hover{background:rgba(12,108,242,.1);color:var(--primary);}
+    /* NAVIGATION */
+    .topnav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1rem;background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.08);} 
+    .brand{font-weight:700;font-size:1.1rem;color:var(--dark);text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:.35rem;margin:0;padding:0;}
+    .nav-links a{display:block;padding:.45rem 1rem;border-radius:8px;text-decoration:none;color:var(--dark);font-weight:600;font-size:.95rem;transition:background .2s;}
+    .nav-links a:hover{background:rgba(12,108,242,.1);color:var(--primary);}  
 
-    section{
-      max-width:var(--maxw);
-      margin:1.8rem auto;
-      background:#fff;
-      padding:2rem 1.5rem;
-      border-radius:var(--radius);
-      box-shadow:0 4px 12px rgba(0,0,0,.05);
-    }
+    /* HERO */
+    .hero{background:var(--dark);color:#fff;text-align:center;padding:4rem 1rem 3.5rem;}
+    .avatar{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.85);margin-bottom:1rem;}
+    .hero h1{margin:.5rem 0 0;font-size:2.2rem;}
+    .tagline{opacity:.85;margin:0 0 1.4rem;font-size:1.1rem;font-weight:300;}
+
+    /* SECTIONS */
+    section{max-width:var(--maxw);margin:2rem auto;background:#fff;padding:2rem 1.5rem;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,.05);} 
     section h2{margin-top:0;color:var(--primary);font-size:1.6rem;}
-    h3{margin-bottom:.4rem;color:var(--dark);}
-    ul,ol{padding-left:1.2rem;}
-    ul li,ol li{margin:.45rem 0;}
+    h3{margin-bottom:.4rem;color:var(--dark);} ul,ol{padding-left:1.2rem;} li{margin:.45rem 0;}
+
+    /* PORTFOLIO GRID */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-top:1rem;}
+    .card{border:1px solid #e2e6ea;border-radius:var(--radius);padding:1rem;background:#fafafa;transition:transform .2s,box-shadow .2s;}
+    .card:hover{transform:translateY(-4px);box-shadow:0 6px 15px rgba(0,0,0,.08);} 
+    .card h4{margin:.2rem 0 .4rem;font-size:1.05rem;color:var(--dark);} .card p{margin:0;font-size:.9rem;}
 
     footer{text-align:center;font-size:.85rem;color:#555;padding:2.5rem 0 3rem;}
 
-    /* Dark mode */
+    /* DARK MODE */
     @media(prefers-color-scheme:dark){
-      body{background:#1f1f1f;color:#e8e8e8;}
-      section{background:#262626;color:#e8e8e8;}
-      nav{background:#1f1f1f;}
-      nav a{color:#e8e8e8;}
-      nav a:hover{background:rgba(242,167,27,.15);color:var(--accent);}  
+      body{background:#1f1f1f;color:#eaeaea;}
+      section{background:#262626;color:#eaeaea;}
+      .topnav{background:#1f1f1f;}
+      .nav-links a{color:#eaeaea;}
+      .nav-links a:hover{background:rgba(242,167,27,.15);color:var(--accent);} 
+      .card{background:#2e2e2e;border-color:#3a3a3a;}
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="https://github.com/MartinaMchenga/Mchenga_Graphportifolio/blob/main/prof.png?raw=true" alt="Martina Mchenga profile photo" class="avatar">
-    <h1>Martina Mchenga, PhD</h1>
-    <p>Health & Development Economist | Generative AI Enthusiast</p>
-    <div class="social">
-      <a href="https://www.linkedin.com/in/martina-mchenga-phd-1164b827/" target="_blank" rel="noopener">Connect on LinkedIn</a>
-    </div>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="#about-me">About Me</a></li>
-      <li><a href="#about-course">The Course</a></li>
-      <li><a href="#submissions">Weekly Submissions</a></li>
+  <!-- NAVIGATION BAR -->
+  <nav class="topnav">
+    <a href="#top" class="brand">Martina Mchenga</a>
+    <ul class="nav-links">
+      <li><a href="#about-me">About</a></li>
+      <li><a href="#about-course">Course</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#submissions">Submissions</a></li>
+      <li><a href="https://www.linkedin.com/in/martina-mchenga-phd-1164b827/" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
   </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="top">
+    <img src="https://github.com/MartinaMchenga/Mchenga_Graphportifolio/blob/main/prof.png?raw=true" alt="Martina Mchenga profile photo" class="avatar">
+    <p style="margin:0;font-size:1.2rem;">Hello, I'm</p>
+    <h1>Martina Mchenga, PhD</h1>
+    <p class="tagline">Health & Development Economist • Generative AI Enthusiast</p>
+  </header>
 
   <main>
     <!-- ABOUT ME -->
@@ -113,8 +88,6 @@
         <li><strong>Past advisory:</strong> Health Financing Technical Advisor to Ministries of Health in Malawi & Sierra Leone (ODI Fellowship)</li>
         <li><strong>Publications:</strong> 20+ peer‑reviewed papers in health economics & policy</li>
       </ul>
-
-      <p>For a full list of experience & publications, see my <a href="https://www.linkedin.com/in/martina-mchenga-ph-d-1164b827/" target="_blank" rel="noopener">LinkedIn profile</a>.</p>
     </section>
 
     <!-- ABOUT COURSE -->
@@ -123,7 +96,7 @@
       <p><strong>Generative AI for Work & Research Productivity</strong><br>
          <em>Live Online Certification · 8 weeks · No‑Code AI Tools for Task Automation (May 2025)</em>
       </p>
-      <p>Still copy‑pasting into ChatGPT? This hands‑on programme shows how to <em>embed</em> AI directly into everyday workflows. Over eight weeks I’ll build automations and prototypes that free up time for higher‑value thinking.</p>
+      <p>This hands‑on programme shows how to embed AI directly into everyday workflows. Over eight weeks I’ll build automations and prototypes that free up time for higher‑value thinking.</p>
 
       <h3>Key Learning Outcomes</h3>
       <ul>
@@ -136,29 +109,20 @@
       </ul>
     </section>
 
-    <!-- WEEKLY SUBMISSIONS -->
-    <section id="submissions">
-      <h2>Weekly Submissions</h2>
-      <p>Links will activate as each deliverable is submitted.</p>
-      <ol id="submission-list">
-        <li>Week 1 – <em>Coming soon</em></li>
-        <li>Week 2 – <em>Coming soon</em></li>
-        <li>Week 3 – <em>Coming soon</em></li>
-        <li>Week 4 – <em>Coming soon</em></li>
-        <li>Week 5 – <em>Coming soon</em></li>
-        <li>Week 6 – <em>Coming soon</em></li>
-        <li>Week 7 – <em>Coming soon</em></li>
-        <li>Week 8 – <em>Coming soon</em></li>
-      </ol>
-    </section>
-  </main>
-
-  <footer>
-    <p>© <span id="year"></span> Martina Mchenga. All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio">
+      <h2>Project Portfolio</h2>
+      <p>Selected analytics & policy projects showcasing my expertise.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>UHC Index Development – Malawi</h4>
+          <p>Designed methodology and led quantitative analysis to create Malawi’s first Universal Health Coverage index.</p>
+        </div>
+        <div class="card">
+          <h4>Cost‑Effectiveness of HIV Prevention</h4>
+          <p>Modelled impact and cost‑effectiveness of HIV prevention packages across five countries with Avenir Health.</p>
+        </div>
+        <div class="card">
+          <h4>Gendered Health Financing Study</h4>
+          <p>Scoping review & analysis revealing gender gaps in social health protection across sub‑Saharan Africa.</p>
+        </
